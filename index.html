@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ANON GATEWAY NODE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      background-color: #000;
+      color: #33ff33;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 16px;
+      padding: 2rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .logo {
+      max-width: 180px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .ascii {
+      white-space: pre;
+      font-size: 14px;
+      margin-bottom: 1rem;
+    }
+    .blink {
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    #typewriter {
+      display: inline;
+    }
+    #cursor {
+      display: inline;
+    }
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Anonymous Logo -->
+    <img src="anon-logo.png" alt="Anonymous Logo" class="logo" />
+
+    <div class="ascii">
+      <pre>
+  ███╗   ███╗██╗███╗   ██╗███████╗
+  ████╗ ████║██║████╗  ██║██╔════╝
+  ██╔████╔██║██║██╔██╗ ██║█████╗  
+  ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  
+  ██║ ╚═╝ ██║██║██║ ╚████║███████╗
+  ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
+      // GATEWAY NODE ACTIVE //
+      </pre>
+    </div>
+
+    <div id="typewriter"></div><span id="cursor" class="blink">_</span>
+    <noscript><p>JavaScript required to access this node.</p></noscript>
+  </div>
+
+  <script>
+    const text = [
+      "Initializing secure tunnel...",
+      "Bypassing firewalls...",
+      "Establi
