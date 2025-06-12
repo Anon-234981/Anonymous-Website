@@ -13,7 +13,7 @@
         $(".popup").not("#" + target).slideUp();
         $("#" + target).slideToggle();
       });
-      $(".close-popup, .popup-bottom-close").click(function () {
+      $(".close-popup").click(function () {
         $(this).closest(".popup").slideUp();
       });
     });
@@ -62,25 +62,26 @@
       margin: 0.5rem 0;
     }
     .operations a {
-      color: #0066cc;
+      color: #00afff;
       text-decoration: none;
     }
     footer {
-      background: #ccc;
+      background: #111;
       padding: 1rem;
       text-align: center;
     }
     .footer-button {
       margin: 0.5rem;
       padding: 0.5rem 1rem;
-      background: #444;
+      background: #333;
       border: none;
       color: white;
       cursor: pointer;
     }
     .popup {
       display: none;
-      background: #f4f4f4;
+      background: #f5f5f5;
+      color: #000;
       padding: 1rem;
       position: fixed;
       top: 0;
@@ -88,29 +89,25 @@
       width: 100%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.5);
       z-index: 1000;
-      color: #000;
+      text-align: center;
     }
     .close-popup {
-      float: right;
       cursor: pointer;
       color: red;
       font-weight: bold;
-    }
-    .popup-bottom-close {
+      font-size: 1.5rem;
       display: block;
-      text-align: center;
-      cursor: pointer;
-      color: red;
-      font-weight: bold;
-      margin-top: 1rem;
+      margin: 0 auto;
+      width: fit-content;
     }
     pre {
       white-space: pre-wrap;
       word-wrap: break-word;
-      color: #0a0;
       background-color: #000;
+      color: #0f0;
       padding: 1rem;
       overflow-x: auto;
+      text-align: left;
     }
   </style>
 </head>
@@ -206,22 +203,23 @@ RTa15BO4
 =tb7f
 -----END PGP PUBLIC KEY BLOCK-----
     </pre>
-    <div class="popup-bottom-close">▼</div>
+    <span class="close-popup">▲</span>
   </div>
 
   <div id="faq" class="popup">
     <span class="close-popup">▲</span>
     <h2>FAQ</h2>
     <p>We are not a group. We are an idea. Anyone can be Anonymous.</p>
-    <div class="popup-bottom-close">▼</div>
+    <span class="close-popup">▲</span>
   </div>
 
   <div id="what" class="popup">
     <span class="close-popup">▲</span>
     <h2>What We Do</h2>
     <p>We expose lies, corruption, and injustice. We protect freedom of information and privacy.</p>
-    <div class="popup-bottom-close">▼</div>
+    <span class="close-popup">▲</span>
   </div>
 </body>
 </html>
+
 
