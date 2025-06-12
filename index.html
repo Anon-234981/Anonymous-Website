@@ -6,26 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
-      background-color: #000;
-      color: #33ff33;
+      background-color: #fff;
+      color: #111;
       font-family: "Courier New", Courier, monospace;
       font-size: 16px;
       padding: 2rem;
-      line-height: 1.5;
       text-align: center;
+      line-height: 1.6;
     }
     .logo {
-      max-width: 180px;
+      max-width: 200px;
       margin: 0 auto 20px;
       display: block;
     }
     .ascii {
       white-space: pre;
       font-size: 14px;
+      color: #333;
       margin-bottom: 1rem;
     }
     .blink {
       animation: blink 1s step-start infinite;
+      color: #555;
     }
     @keyframes blink {
       50% { opacity: 0; }
@@ -49,13 +51,13 @@
 
     <div class="ascii">
       <pre>
-  ███╗   ███╗██╗███╗   ██╗███████╗
-  ████╗ ████║██║████╗  ██║██╔════╝
-  ██╔████╔██║██║██╔██╗ ██║█████╗  
-  ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  
-  ██║ ╚═╝ ██║██║██║ ╚████║███████╗
-  ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
-      // GATEWAY NODE ACTIVE //
+███╗   ███╗██╗███╗   ██╗███████╗
+████╗ ████║██║████╗  ██║██╔════╝
+██╔████╔██║██║██╔██╗ ██║█████╗  
+██║╚██╔╝██║██║██║╚██╗██║██╔══╝  
+██║ ╚═╝ ██║██║██║ ╚████║███████╗
+╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
+    // GATEWAY NODE ACTIVE //
       </pre>
     </div>
 
@@ -66,5 +68,32 @@
   <script>
     const text = [
       "Initializing secure tunnel...",
-      "Bypassing firewalls...",
-      "Establi
+      "Authenticating node v7.omega...",
+      "Connection verified.",
+      "Identity: ANONYMOUS",
+      "We do not forgive. We do not forget.",
+      "Expect us."
+    ];
+    const el = document.getElementById("typewriter");
+    let index = 0;
+    let line = 0;
+
+    function typeLine() {
+      if (line < text.length) {
+        if (index < text[line].length) {
+          el.innerHTML += text[line].charAt(index);
+          index++;
+          setTimeout(typeLine, 40);
+        } else {
+          el.innerHTML += "<br/>";
+          index = 0;
+          line++;
+          setTimeout(typeLine, 500);
+        }
+      }
+    }
+
+    window.onload = typeLine;
+  </script>
+</body>
+</html>
