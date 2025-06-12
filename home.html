@@ -2,121 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anonymous | Expect Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anonymous - Operations</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     html {
       scroll-behavior: smooth;
     }
 
     body {
+      background-color: #0b0b0b;
+      color: white;
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Courier New', monospace;
-      background: #ffffff; /* Matching white background */
-      color: #111;
-      line-height: 1.6;
+      padding: 0;
     }
 
     header {
       text-align: center;
-      padding: 2rem;
-      background-color: #ffffff;
+      padding: 2em 0;
     }
 
     header img {
-      width: 200px;
-      max-width: 80%;
+      max-width: 120px;
     }
 
-    .quote {
-      text-align: center;
-      margin: 1rem auto;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: #555;
+    section {
+      padding: 2em;
     }
 
-    .container {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.5rem;
-      margin-top: 2rem;
-      color: #111;
-    }
-
-    iframe {
-      display: block;
-      margin: 2rem auto;
-      max-width: 100%;
-    }
-
-    ul li {
-      margin: 1rem 0;
-    }
-
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    .operation {
+      margin-bottom: 2em;
     }
 
     footer {
-      background: #f5f5f5;
-      color: #222;
+      background: #111;
+      color: white;
+      padding: 1em 0;
       text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-      border-top: 1px solid #ccc;
+      position: relative;
+    }
+
+    button {
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      cursor: pointer;
+    }
+
+    .popup {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.95);
+      color: white;
+      padding: 2em;
+      text-align: center;
+      transition: top 0.5s ease;
+      z-index: 1000;
+    }
+
+    .popup.active {
+      top: 0;
+    }
+
+    .popup-content {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      font-size: 2em;
+      display: block;
+      margin-bottom: 1em;
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="anon-logo.png" alt="Anonymous Logo">
+  </header>
 
-<header>
-  <img src="anon-logo.png" alt="Anonymous Logo" />
-  <h1>We Are Anonymous</h1>
-</header>
+  <section id="video">
+    <div style="text-align:center">
+      <video controls width="80%">
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
 
-<div class="quote">
-  “We are black, white, brown, and yellow.<br>
-    We are rich and poor, young and old.<br>
-    We are Muslim, Christian, atheist, and agnostic.<br>
-    We are everyone. We are everywhere. Expect us.”
-</div>
+  <section id="operations">
+    <h1 style="text-align:center">Ongoing Operations</h1>
+    <div class="operation">
+      <h2>OpExpose</h2>
+      <p>We expose corruption wherever it hides.</p>
+    </div>
+    <div class="operation">
+      <h2>OpJustice</h2>
+      <p>We seek justice for the voiceless and oppressed.</p>
+    </div>
+  </section>
 
-<div class="container">
-  <h2>Our Message</h2>
-  <p>We are a decentralized international collective of individuals working together in pursuit of truth, justice, and freedom. Expect us.</p>
+  <section id="quote" style="text-align: center; padding: 2em; font-size: 1.2em;">
+    <p>
+      We are black, white, brown, and yellow.<br>
+      We are rich and poor, young and old.<br>
+      We are Muslim, Christian, atheist, and agnostic.<br>
+      We are everyone. We are everywhere. Expect us.
+    </p>
+  </section>
 
-  <h2>Watch</h2>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/0PLckRT4Y58" 
-          title="Anonymous Video" frameborder="0" allowfullscreen></iframe>
+  <footer>
+    <button onclick="togglePopup('contactPopup')">Contact Us</button>
+    <button onclick="togglePopup('faqPopup')">FAQ</button>
+    <button onclick="togglePopup('whatWeDoPopup')">What We Do</button>
+  </footer>
 
-  <h2>Notable Operations</h2>
-  <ul>
-    <li><a href="https://en.wikipedia.org/wiki/Operation_Ferguson" target="_blank">Operation Ferguson</a> — Protested the shooting of Mike Brown in Missouri.</li>
-    <li><a href="https://en.wikipedia.org/wiki/2014_Hong_Kong_protests" target="_blank">Operation Hong Kong</a> — Supported democracy protestors during Umbrella Movement.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Operation_KKK" target="_blank">Operation KKK</a> — Exposed members of the Ku Klux Klan.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Charlie_Hebdo_shooting" target="_blank">Charlie Hebdo Response</a> — Condemned terrorism and defended free speech.</li>
-    <li><a href="https://en.wikipedia.org/wiki/BlueLeaks" target="_blank">BlueLeaks</a> — Leaked law enforcement data exposing misconduct.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Anonymous_and_the_Russian_invasion_of_Ukraine" target="_blank">Ukraine Operations</a> — Targeted Russian state systems after the 2022 invasion.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Anonymous_(hacker_group)#Operation_StormFront" target="_blank">Operation StormFront</a> — Took down white supremacist platforms.</li>
-    <li><a href="https://en.wikipedia.org/wiki/Anonymous_(hacker_group)#Philippines_operations" target="_blank">Philippine Ops</a> — Hacked 100+ gov sites in protest of corruption.</li>
-  </ul>
-</div>
+  <div id="contactPopup" class="popup">
+    <div class="popup-content">
+      <span onclick="togglePopup('contactPopup')" class="close-btn">&#9650;</span>
+      <h2>Contact Us</h2>
+      <p>Email: anonymous@protonmail.com</p>
+    </div>
+  </div>
 
-<footer>
-  <p>We are Anonymous. We are Legion. We do not forgive. We do not forget. Expect us.</p>
-</footer>
+  <div id="faqPopup" class="popup">
+    <div class="popup-content">
+      <span onclick="togglePopup('faqPopup')" class="close-btn">&#9650;</span>
+      <h2>FAQ</h2>
+      <p>Who is Anonymous? Anyone who wants to be. There is no leadership.</p>
+    </div>
+  </div>
 
+  <div id="whatWeDoPopup" class="popup">
+    <div class="popup-content">
+      <span onclick="togglePopup('whatWeDoPopup')" class="close-btn">&#9650;</span>
+      <h2>What We Do</h2>
+      <p>We expose injustice, fight corruption, and stand for freedom of speech and information.</p>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup(id) {
+      const popup = document.getElementById(id);
+      popup.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
-
