@@ -13,7 +13,7 @@
         $(".popup").not("#" + target).slideUp();
         $("#" + target).slideToggle();
       });
-      $(".close-popup").click(function () {
+      $(".close-popup, .popup-bottom-close").click(function () {
         $(this).closest(".popup").slideUp();
       });
     });
@@ -23,8 +23,8 @@
       scroll-behavior: smooth;
     }
     body {
-      background-color: #1a1a1a;
-      color: white;
+      background-color: #fff;
+      color: #000;
       font-family: sans-serif;
       margin: 0;
     }
@@ -48,7 +48,7 @@
     .operations {
       margin: 2rem;
       padding: 1rem;
-      background-color: #111;
+      background-color: #eee;
     }
     .operations h2 {
       text-align: center;
@@ -62,25 +62,25 @@
       margin: 0.5rem 0;
     }
     .operations a {
-      color: #00afff;
+      color: #0066cc;
       text-decoration: none;
     }
     footer {
-      background: #111;
+      background: #ccc;
       padding: 1rem;
       text-align: center;
     }
     .footer-button {
       margin: 0.5rem;
       padding: 0.5rem 1rem;
-      background: #333;
+      background: #444;
       border: none;
       color: white;
       cursor: pointer;
     }
     .popup {
       display: none;
-      background: #222;
+      background: #f4f4f4;
       padding: 1rem;
       position: fixed;
       top: 0;
@@ -88,6 +88,7 @@
       width: 100%;
       box-shadow: 0 4px 8px rgba(0,0,0,0.5);
       z-index: 1000;
+      color: #000;
     }
     .close-popup {
       float: right;
@@ -95,10 +96,21 @@
       color: red;
       font-weight: bold;
     }
+    .popup-bottom-close {
+      display: block;
+      text-align: center;
+      cursor: pointer;
+      color: red;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
     pre {
       white-space: pre-wrap;
       word-wrap: break-word;
-      color: #0f0;
+      color: #0a0;
+      background-color: #000;
+      padding: 1rem;
+      overflow-x: auto;
     }
   </style>
 </head>
@@ -194,18 +206,22 @@ RTa15BO4
 =tb7f
 -----END PGP PUBLIC KEY BLOCK-----
     </pre>
+    <div class="popup-bottom-close">▼</div>
   </div>
 
   <div id="faq" class="popup">
     <span class="close-popup">▲</span>
     <h2>FAQ</h2>
     <p>We are not a group. We are an idea. Anyone can be Anonymous.</p>
+    <div class="popup-bottom-close">▼</div>
   </div>
 
   <div id="what" class="popup">
     <span class="close-popup">▲</span>
     <h2>What We Do</h2>
     <p>We expose lies, corruption, and injustice. We protect freedom of information and privacy.</p>
+    <div class="popup-bottom-close">▼</div>
   </div>
 </body>
 </html>
+
