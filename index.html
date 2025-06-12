@@ -42,18 +42,6 @@
       max-width: 800px;
       margin: 0 auto;
     }
-    #realSite {
-      display: none;
-      margin-top: 3rem;
-    }
-    a {
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-    }
-    a:hover {
-      color: #888;
-    }
   </style>
 </head>
 <body>
@@ -76,15 +64,6 @@
 
     <!-- Typewriter Effect -->
     <div id="typewriter"></div><span id="cursor" class="blink">_</span>
-
-    <!-- Hidden Real Site Section -->
-    <div id="realSite">
-      <h2>Welcome to the Node</h2>
-      <p>This is a secure information node for Anonymous operatives only.</p>
-      <a href="#leaks">→ Access Leaks</a> |
-      <a href="#chat">→ Secure Chat</a> |
-      <a href="#ops">→ Operation Briefs</a>
-    </div>
   </div>
 
   <script>
@@ -113,9 +92,9 @@
           setTimeout(typeLine, 500);
         }
       } else {
-        // Delay and reveal the real site
+        // Wait 2 seconds, then redirect
         setTimeout(() => {
-          document.getElementById("realSite").style.display = "block";
+          window.location.href = "home.html";
         }, 2000);
       }
     }
