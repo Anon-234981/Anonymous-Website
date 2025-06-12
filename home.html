@@ -3,82 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anonymous - Operations</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Anonymous</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".footer-button").click(function () {
+        const target = $(this).data("target");
+        $(".popup").not("#" + target).slideUp();
+        $("#" + target).slideToggle();
+      });
+      $(".close-popup").click(function () {
+        $(this).closest(".popup").slideUp();
+      });
+    });
+  </script>
   <style>
     html {
       scroll-behavior: smooth;
     }
-
     body {
-      background-color: #0b0b0b;
+      background-color: #000; /* matching logo */
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
       margin: 0;
-      padding: 0;
     }
-
     header {
       text-align: center;
-      padding: 2em 0;
+      padding: 1rem;
     }
-
     header img {
-      max-width: 120px;
+      max-width: 200px;
     }
-
-    section {
-      padding: 2em;
+    .quote {
+      text-align: center;
+      margin: 2rem;
+      font-size: 1.2rem;
     }
-
-    .operation {
-      margin-bottom: 2em;
+    .message {
+      text-align: center;
+      font-style: italic;
+      margin: 1rem;
     }
-
     footer {
       background: #111;
-      color: white;
-      padding: 1em 0;
+      padding: 1rem;
       text-align: center;
-      position: relative;
     }
-
-    button {
-      background: none;
-      border: 1px solid white;
+    .footer-button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #333;
+      border: none;
       color: white;
-      padding: 0.5em 1em;
-      margin: 0 0.5em;
       cursor: pointer;
     }
-
     .popup {
+      display: none;
+      background: #222;
+      padding: 1rem;
       position: fixed;
-      top: -100%;
+      top: 0;
       left: 0;
-      right: 0;
-      background: rgba(0,0,0,0.95);
-      color: white;
-      padding: 2em;
-      text-align: center;
-      transition: top 0.5s ease;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
       z-index: 1000;
     }
-
-    .popup.active {
-      top: 0;
-    }
-
-    .popup-content {
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .close-btn {
+    .close-popup {
+      float: right;
       cursor: pointer;
-      font-size: 2em;
-      display: block;
-      margin-bottom: 1em;
+      color: red;
+      font-weight: bold;
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
   </style>
 </head>
@@ -87,71 +86,94 @@
     <img src="anon-logo.png" alt="Anonymous Logo">
   </header>
 
-  <section id="video">
-    <div style="text-align:center">
-      <video controls width="80%">
-        <source src="your-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
-
-  <section id="operations">
-    <h1 style="text-align:center">Ongoing Operations</h1>
-    <div class="operation">
-      <h2>OpExpose</h2>
-      <p>We expose corruption wherever it hides.</p>
-    </div>
-    <div class="operation">
-      <h2>OpJustice</h2>
-      <p>We seek justice for the voiceless and oppressed.</p>
-    </div>
-  </section>
-
-  <section id="quote" style="text-align: center; padding: 2em; font-size: 1.2em;">
+  <section class="quote">
     <p>
-      We are black, white, brown, and yellow.<br>
-      We are rich and poor, young and old.<br>
-      We are Muslim, Christian, atheist, and agnostic.<br>
+      We are black, white, brown, and yellow.<br />
+      We are rich and poor, young and old.<br />
+      We are Muslim, Christian, atheist, and agnostic.<br />
       We are everyone. We are everywhere. Expect us.
     </p>
   </section>
 
+  <section class="message">
+    <p>Expect us. The truth is free.</p>
+  </section>
+
   <footer>
-    <button onclick="togglePopup('contactPopup')">Contact Us</button>
-    <button onclick="togglePopup('faqPopup')">FAQ</button>
-    <button onclick="togglePopup('whatWeDoPopup')">What We Do</button>
+    <button class="footer-button" data-target="contact">Contact Us</button>
+    <button class="footer-button" data-target="faq">FAQ</button>
+    <button class="footer-button" data-target="what">What We Do</button>
   </footer>
 
-  <div id="contactPopup" class="popup">
-    <div class="popup-content">
-      <span onclick="togglePopup('contactPopup')" class="close-btn">&#9650;</span>
-      <h2>Contact Us</h2>
-      <p>Email: anonymous@protonmail.com</p>
-    </div>
+  <div id="contact" class="popup">
+    <span class="close-popup">▲</span>
+    <h2>Contact Us</h2>
+    <p>Send your PGP signed message at anonymous234981@gmail.com</p>
+    <pre>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+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
+RTa15BO4
+=tb7f
+-----END PGP PUBLIC KEY BLOCK-----
+    </pre>
   </div>
 
-  <div id="faqPopup" class="popup">
-    <div class="popup-content">
-      <span onclick="togglePopup('faqPopup')" class="close-btn">&#9650;</span>
-      <h2>FAQ</h2>
-      <p>Who is Anonymous? Anyone who wants to be. There is no leadership.</p>
-    </div>
+  <div id="faq" class="popup">
+    <span class="close-popup">▲</span>
+    <h2>FAQ</h2>
+    <p>We are not a group. We are an idea. Anyone can be Anonymous.</p>
   </div>
 
-  <div id="whatWeDoPopup" class="popup">
-    <div class="popup-content">
-      <span onclick="togglePopup('whatWeDoPopup')" class="close-btn">&#9650;</span>
-      <h2>What We Do</h2>
-      <p>We expose injustice, fight corruption, and stand for freedom of speech and information.</p>
-    </div>
+  <div id="what" class="popup">
+    <span class="close-popup">▲</span>
+    <h2>What We Do</h2>
+    <p>We expose lies, corruption, and injustice. We protect freedom of information and privacy.</p>
   </div>
-
-  <script>
-    function togglePopup(id) {
-      const popup = document.getElementById(id);
-      popup.classList.toggle('active');
-    }
-  </script>
 </body>
 </html>
